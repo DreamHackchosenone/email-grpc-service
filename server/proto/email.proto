@@ -1,0 +1,25 @@
+syntax = "proto3"; // 指定proto版本
+
+// 定义Hello服务
+service Email {
+  // 定义SayHello方法
+  rpc SendEmail(SendEmailRequest) returns (SendEmailResponse) {}
+}
+// HelloRequest 请求结构
+message SendEmailRequest {
+
+  string to = 1;
+  string subject = 2;
+  enum ContentType {
+    TEXT = 0;
+    HTML = 1;
+  };
+  string content = 3;
+  string from = 4;
+  string bcc = 5;
+  string cc = 6;
+}
+// HelloResponse 响应结构
+message SendEmailResponse {
+  string message = 1;
+}
