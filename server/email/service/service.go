@@ -2,6 +2,7 @@ package service
 
 import (
 	localConfig "email-grpc-service/server/config"
+	"fmt"
 	newEmail "github.com/jordan-wright/email"
 	"net/smtp"
 )
@@ -16,6 +17,7 @@ func SendEmail(to string, subject string, content string) string{
 	e.Text = []byte(content)
 	ret := e.Send(c.ADDR, smtp.PlainAuth("", c.USER, c.PASSWORD, c.HOST))
 	if ret != nil {
+		fmt.Println("smtp return", ret)
 		return "error"
 	}
 	return "ok"

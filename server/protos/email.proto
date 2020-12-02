@@ -18,6 +18,7 @@ message SendEmailRequest {
   string from = 4;
   string bcc = 5;
   string cc = 6;
+  string file_path = 7;
 }
 // HelloResponse 响应结构
 message SendEmailResponse {

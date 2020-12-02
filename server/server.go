@@ -2,7 +2,7 @@ package main
 
 import (
 	"email-grpc-service/server/email/handler"
-	"email-grpc-service/server/proto"
+	"email-grpc-service/server/protos"
 	"fmt"
 	"google.golang.org/grpc"
 	"net"

@@ -18,7 +18,7 @@ type EmailConfig struct {
 func GetEmailCnfig() EmailConfig {
 	var emailconfig EmailConfig
 	if err := config.Load(file.NewSource(
-		file.WithPath("./config/config.json"),
+		file.WithPath("./server/config/config.json"),
 	)); err != nil {
 		fmt.Println("err", err)
 		return emailconfig
@@ -30,5 +30,4 @@ func GetEmailCnfig() EmailConfig {
 	}
 	return emailconfig
 }
-
 
